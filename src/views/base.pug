@@ -1,7 +1,20 @@
 html(lang="en")
     head
         title #{pageTitle} | Youtube
+        link(rel="stylesheet" href="https://unpkg.com/mvp.css@1.12/mvp.css") 
     body
+        header 
+            if fakeUser.logggedIn
+                small Hello #{fakeUser.username}
+            nav
+                ul 
+                    if fakeUser.logggedIn
+                        li 
+                            a(href="/logout") Log out
+                    else
+                        li
+                            a(href="/login") login
+            h1=pageTitle
         block content
     
     include partials/footer.pug 
