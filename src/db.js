@@ -6,7 +6,7 @@ mongoose.set('strictQuery', false);
 const db = mongoose.connection;
 
 const handleOpen = () => console.log("✅ connected to DB");
-const handleError = () => console.log("❌ DB Error",error);
+const handleError = () => console.log("❌ DB Error");
 
 db.on("error",handleError);
 db.once("open",handleOpen);
